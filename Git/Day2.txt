@@ -1,0 +1,49 @@
+Working with Branches 
+------------------------
+git branch     --> To list the current branch 
+git branch < name of the branch >  --> To create new branch  
+git checkout < Name of the branch >  --> To swich to an existing branch 
+git checkout -b < Branch name >  --> This is to create new branch and swich to that 
+
+git merge -- > To merge the branches 
+
+We checked two scenarios 
+
+1 creating two different files/directory in both the branches and merging. This is an easy one it will work without any issue 
+2 Edit the same file with different/Same content and merge, this gives merge conflict, we need to edit manually and solve the conflict.
+------------------------
+
+Working with git log 
+--------------------
+git log 
+git log  --graph   --> Gives graphical representation  
+git log  --graph --decorate
+git log  --graph  --oneline  --> gives single line output for each commit, only the commit ID and commit comment 
+git log  --oneline 
+
+
+git show 2162d07 To see the details of one specific commit ID 
+git show HEAD^^   --> To view the commit done 2 steps back 
+
+There are lots of option Like HEAD^ , HEAD~2 , this can be used as per our requirements 
+
+git blame <filename >  --> To see the changes happened for files with its commit ID , it shows each line when it was updated 
+git blame  K8-Manifest/redis.yaml
+
+While working with big projects the number of commits will be very high. So to list only last few lines use below options 
+
+git log -3  --> To view only last 3 commit 
+git log -3  --oneline 
+git log HEAD~3..HEAD   The commit between both the HEADs 
+
+Explore more on the above option as needed. 
+
+git commit --amend  --> To edit the last commit message 
+
+The above option will allow only to edit the last commit. rebase can be used to correct rearrange the commits.
+
+This will be mainly used before pushing the changes to the central repository. 
+
+git rebase -i  ---> Interactive rebase 
+
+Other than this we discussed the collaborators in the git hub, this helps multiple people can work in single projects
